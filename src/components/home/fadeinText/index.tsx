@@ -55,6 +55,7 @@ export default function FadeinText() {
                     key={letter + "_" + i}
                     className="opacity-[0.2] text-[4vw]"
                     ref={(el) => {
+                        if (el)
                         refs.current.push(el);
                     }}
                 >
