@@ -82,8 +82,9 @@ const BannerRowTop = ({ title }: BannerRowProps) => {
                 className="row-col"
             >
                 <span className="row-message">
-                    Unleash the power of Your Company and embark on a journey to
-                    elevate your brand story towards unprecedented success
+                    Ignite the essence of Your Brand and let&apos;s embark on an
+                    extraordinary journey to elevate your narrative to new
+                    heights.
                 </span>
             </motion.div>
         </div>

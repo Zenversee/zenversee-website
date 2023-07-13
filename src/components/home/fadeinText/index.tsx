@@ -3,9 +3,10 @@
 import { useRef, useEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
+import { syne } from "@zenversee/fonts";
 
 const phrase: String =
-    "We, at Zenversee combines design, tech, marketing to turn bold ideas into brands. We specialize in providing web development and social media marketing services to startups, businesses, and influencers. With our expertise, we help to bring your project to next level let the project be on VR,AR, metaverse or something else.";
+    "We, at Zenversee combine design, tech,and marketing to turn your bold ideas into brands. We specialize in providing web development and social media marketing services to startups, businesses, and influencers. With our expertise, we help to bring your project to the next level be it on VR,AR, metaverse or something else.";
 
 export default function FadeinText() {
     let refs = useRef<HTMLSpanElement[]>([]);
@@ -55,8 +56,7 @@ export default function FadeinText() {
                     key={letter + "_" + i}
                     className="opacity-[0.2] text-[4vw]"
                     ref={(el) => {
-                        if (el)
-                        refs.current.push(el);
+                        if (el) refs.current.push(el);
                     }}
                 >
                     {letter}
@@ -69,7 +69,7 @@ export default function FadeinText() {
     return (
         <main
             ref={container}
-            className={`flex h-[100vh] items-end justify-center mb-[100vh] text-black`}
+            className={` flex h-[100vh] items-end justify-center mb-[30rem] text-black `}
         >
             <div ref={body} className={`w-[90%] flex flex-wrap`}>
                 {splitWords(phrase)}

@@ -1,12 +1,14 @@
+import OurServices from "@zenversee/components/home/OurServices";
 import FadeinText from "@zenversee/components/home/fadeinText";
 import Hero from "@zenversee/components/home/hero";
-import HorizontalScroll from "@zenversee/components/home/rightLeftScroll";
+import OurClient from "@zenversee/components/home/ourClient";
 export default function Home() {
     return (
         <main>
             <Hero />
             <FadeinText />
-            {/* <HorizontalScroll /> */}
+            <OurServices />
+            <OurClient />
         </main>
     );
 }

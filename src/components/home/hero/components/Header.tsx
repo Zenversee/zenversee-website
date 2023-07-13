@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { trapBold } from "@zenversee/fonts";
 
 const Header = () => {
     return (
@@ -16,7 +17,9 @@ const Header = () => {
         >
             <div className="header-inner">
                 <Link href="/">
-                    <div className="logo">Zenversee</div>
+                    <div className={`${trapBold.className} logo`}>
+                        Zenversee
+                    </div>
                 </Link>
 
                 <nav className="nav">
@@ -41,9 +44,9 @@ const Header = () => {
                         Let&apos;s work together
                     </a>
                 </div>
-                <div className="hamburger-menu">
-                    <span></span>
-                    <span></span>
+                <div className="hamburger-menu h-[56px] w-[56px] rounded-full flex items-center justify-center flex-col cursor-pointer">
+                    <span className="w-[20px] h-[3px] bg-black block m-[2px]" />
+                    <span className="w-[20px] h-[3px] bg-black block m-[2px]" />
                 </div>
             </div>
         </motion.div>
