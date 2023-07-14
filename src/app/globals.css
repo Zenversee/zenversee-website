@@ -3,13 +3,21 @@
 @tailwind utilities;
 
 ::selection {
-    background-color: #24242a;
-    color: #fff;
+  background-color: #24242a;
+  color: #fff;
 }
 
 /* for firefox */
 ::-moz-selection {
-    background-color: #24242a;
-    color: #fff;
+  background-color: #24242a;
+  color: #fff;
 }
 
+main {
+  display: block;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}

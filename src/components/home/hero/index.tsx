@@ -1,8 +1,7 @@
 "use client";
 
-import { motion, AnimateSharedLayout, AnimatePresence } from "framer-motion";
-import React, { useEffect, useState } from "react";
-import Loader from "./components/Loader";
+import { motion, AnimateSharedLayout } from "framer-motion";
+import React from "react";
 import Header from "./components/Header";
 import Banner from "./components/Banner";
 

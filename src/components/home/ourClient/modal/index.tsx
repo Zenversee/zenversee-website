@@ -96,7 +96,6 @@ export default function Modal({ modal, projects }: ModalProps) {
                 >
                     {projects.map((project: IProject, index: any) => {
                         const { src, color } = project;     
-                        console.log(`/images/${src}`);
                         
                         return (
                             <div

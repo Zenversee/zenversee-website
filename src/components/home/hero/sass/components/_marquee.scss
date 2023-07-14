@@ -1,6 +1,9 @@
 $move-initial: calc(-25%);
 $move-final: calc(-50%);
 
+// Breakpoints
+$layout-breakpoint-large: 1920px;
+
 .marquee {
   position: relative;
   overflow: hidden;
@@ -18,12 +21,6 @@ $move-final: calc(-50%);
       transform: translate3d(calc(-25% + 10vw), 0, 0);
       animation: marquee-lg 5s linear infinite;
       animation-play-state: paused;
-    }
-  }
-  .row-title {
-    padding: 0 8vw;
-    @media (min-width: $layout-breakpoint-large) {
-      padding: 0 10vw;
     }
   }
 }

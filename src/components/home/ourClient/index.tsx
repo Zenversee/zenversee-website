@@ -39,11 +39,11 @@ export default function OurClient() {
   return (
   <section className={`flex flex-col h-screen items-center justify-center mt-[20rem]`}>
 
-    <h2 className={`${trapBold.className} mb-[10rem] text-[9rem]`}>
+    <h2 className={`${trapBold.className} mb-[10rem] text-[5rem] md:text-[9rem]`}>
       Our Clients
     </h2>
 
-    <div className={`flex w-[1000px] flex-col items-center justify-center`}>
+    <div className={`flex w-[80vw] flex-col items-center justify-center`}>
       {
         projects.map( (project, index) => {
           return <Project index={index} title={project.title} link={project.link} setModal={setModal} key={index}/>

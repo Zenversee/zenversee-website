@@ -54,7 +54,7 @@ export default function FadeinText() {
             letters.push(
                 <span
                     key={letter + "_" + i}
-                    className="opacity-[0.2] text-[4vw]"
+                    className="opacity-[0.2] text-[8vw] xl:text-[4vw]"
                     ref={(el) => {
                         if (el) refs.current.push(el);
                     }}
@@ -69,7 +69,7 @@ export default function FadeinText() {
     return (
         <main
             ref={container}
-            className={` flex h-[100vh] items-end justify-center mb-[30rem] text-black `}
+            className={` flex h-[90vh] md:h-[100vh] items-end justify-center md:mb-[30rem] text-black `}
         >
             <div ref={body} className={`w-[90%] flex flex-wrap`}>
                 {splitWords(phrase)}
