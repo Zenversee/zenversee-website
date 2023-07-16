@@ -21,3 +21,33 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
+
+
+.textContainer{
+  transition: transform 0.4s;
+  transform-style: preserve-3d;
+}
+
+.textContainer p{
+  font-size: 2rem;
+  transition: all 0.4s;
+  line-height: 2rem;
+}
+
+.textContainer .secondary{
+  transform: rotateX(-90deg) translateY(1rem);
+  transform-origin: bottom center;
+  opacity: 0;
+}
+
+.textContainer:hover{
+  transform: rotateX(90deg);
+}
+
+.textContainer:hover .secondary{
+  opacity: 1;
+}
+
+.textContainer:hover .primary{
+  opacity: 0;
+}

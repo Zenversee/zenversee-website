@@ -1,3 +1,4 @@
+import Footer from "@zenversee/components/home/Footer";
 import OurServices from "@zenversee/components/home/OurServices";
 import FadeinText from "@zenversee/components/home/fadeinText";
 import Hero from "@zenversee/components/home/hero";
@@ -7,8 +8,9 @@ export default function Home() {
         <main>
             <Hero />
             <FadeinText />
-            <OurServices />
+            {/* <OurServices /> */}
             <OurClient />
+            <Footer />
         </main>
     );
 }

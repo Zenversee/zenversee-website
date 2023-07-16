@@ -9,7 +9,11 @@ module.exports = {
     extend: {
       colors:{
         primary: "#f0eff1",
+        secondary: "#191919",
         dark: "#24242a"
+      },
+      screens: {
+        'fold': '285px',
       }
     },
   },

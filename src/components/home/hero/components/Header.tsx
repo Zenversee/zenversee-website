@@ -28,7 +28,7 @@ const navContent = [
 
 const Header = () => {
   return (
-    <motion.div
+    <motion.nav
       initial={{ opacity: 0, y: -180 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
@@ -36,7 +36,7 @@ const Header = () => {
         duration: 1,
         delay: 0.6,
       }}
-      className=" flex h-[156px] justify-center px-10 md:px-[108px] text-dark"
+      className=" flex h-[156px] justify-center px-10 text-dark md:px-[108px]"
     >
       <div className=" flex w-full items-center justify-between md:text-2xl 2xl:text-3xl">
         <Link href="/">
@@ -47,7 +47,7 @@ const Header = () => {
           </div>
         </Link>
 
-        <nav className="hidden list-none items-center justify-center gap-x-[3vw] xl:flex">
+        <ul className="hidden list-none items-center justify-center gap-x-[3vw] xl:flex">
           {navContent.map((item, index) => {
             return (
               <li key={index}>
@@ -60,9 +60,10 @@ const Header = () => {
               </li>
             );
           })}
-        </nav>
+        </ul>
+
         <div className="flex items-center gap-10">
-          <div className="xl:flex-1">
+          <div className="hidden sm:flex xl:flex-1">
             <a
               className="ml-5 whitespace-nowrap border-b-2 border-none border-dark pb-[12px] font-semibold text-dark md:border-solid"
               href="https://knccspfxa0x.typeform.com/to/U4F628eG"
@@ -74,14 +75,14 @@ const Header = () => {
             style={{
               transition: "0.2s cubic-bezier(0.215, 0.61, 0.355, 1)",
             }}
-            className="hover:bg-[#E0E0E0] flex h-[56px] w-[56px] cursor-pointer flex-col items-center justify-center rounded-full xl:hidden"
+            className="flex h-[56px] w-[56px] cursor-pointer flex-col items-center justify-center rounded-full hover:bg-[#E0E0E0] xl:hidden"
           >
             <span className="m-[2px] block h-[3px] w-[20px] bg-dark" />
             <span className="m-[2px] block h-[3px] w-[20px] bg-dark" />
           </div>
         </div>
       </div>
-    </motion.div>
+    </motion.nav>
   );
 };
 

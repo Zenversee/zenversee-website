@@ -37,7 +37,7 @@ export default function OurClient() {
   const [modal, setModal] = useState({active: false, index: 0})
 
   return (
-  <section className={`flex flex-col h-screen items-center justify-center mt-[20rem]`}>
+  <section className={`flex flex-col h-screen items-center justify-center my-[20rem]`}>
 
     <h2 className={`${trapBold.className} mb-[10rem] text-[5rem] md:text-[9rem]`}>
       Our Clients
