@@ -8,7 +8,7 @@ export default function Home() {
         <main>
             <Hero />
             <FadeinText />
-            {/* <OurServices /> */}
+            <OurServices />
             <OurClient />
             <Footer />
         </main>

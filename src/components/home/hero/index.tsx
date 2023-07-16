@@ -8,17 +8,16 @@ import Banner from "./components/Banner";
 import "./sass/main.scss";
 
 const Hero = () => {
-    return (
-        <AnimateSharedLayout type="crossfade">
-            {/* <AnimatePresence> */}
-
-            <>
-                <Header />
-                <Banner />
-            </>
-            {/* </AnimatePresence> */}
-        </AnimateSharedLayout>
-    );
+  return (
+    <AnimateSharedLayout type="crossfade">
+      <>
+        <Header />
+        <div className="my-[15vw] lg:my-0">
+          <Banner />
+        </div>
+      </>
+    </AnimateSharedLayout>
+  );
 };
 
 export default Hero;

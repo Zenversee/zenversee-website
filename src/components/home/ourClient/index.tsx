@@ -24,12 +24,6 @@ const projects = [
     link: "https://heva.ai/",
     color: "#EFE8D3"
   },
-  // {
-  //   title: "Silencio",
-  //   src: "silencio.png",
-  //   link: "https://silencio.com/",
-  //   color: "#706D63"
-  // }
 ]
 
 export default function OurClient() {
@@ -39,7 +33,7 @@ export default function OurClient() {
   return (
   <section className={`flex flex-col h-screen items-center justify-center my-[20rem]`}>
 
-    <h2 className={`${trapBold.className} mb-[10rem] text-[5rem] md:text-[9rem]`}>
+    <h2 className={`${trapBold.className} mb-[10rem] text-center text-[5rem] md:text-[9rem]`}>
       Our Clients
     </h2>
 

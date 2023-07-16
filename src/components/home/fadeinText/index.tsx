@@ -69,7 +69,7 @@ export default function FadeinText() {
     return (
         <main
             ref={container}
-            className={` flex h-[90vh] md:h-[100vh] items-end justify-center md:mb-[30rem] text-black `}
+            className={` flex h-[90vh] cursor-default md:h-[100vh] items-end justify-center md:mb-[30rem] text-black `}
         >
             <div ref={body} className={`w-[90%] flex flex-wrap`}>
                 {splitWords(phrase)}
