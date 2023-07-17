@@ -26,6 +26,7 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://www.zenversee.com/",
     title: "Zenversee",
+    images: "/thumbnail.png",
     description:
       "Unlock the power of innovation with Zenversee, a leading software development agency. Discover our cutting-edge SaaS products and tailored marketing solutions to elevate your business. Stay tuned as we prepare to launch our website, bringing you groundbreaking technology and results-driven strategies for business success.",
     locale: "en_US",
