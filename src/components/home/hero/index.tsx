@@ -9,14 +9,14 @@ import "./sass/main.scss";
 
 const Hero = () => {
   return (
-    <AnimateSharedLayout type="crossfade">
+    // <AnimateSharedLayout type="crossfade">
       <>
         <Header />
         <div className="my-[15vw] lg:my-0">
           <Banner />
         </div>
       </>
-    </AnimateSharedLayout>
+    // </AnimateSharedLayout>
   );
 };
 

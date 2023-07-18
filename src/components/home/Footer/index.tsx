@@ -1,7 +1,6 @@
 "use client";
 
 import { syne, trapBold } from "@zenversee/fonts";
-import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 const greetingList = [
@@ -35,6 +34,8 @@ const socialsList = [
 
 const Footer = () => {
   const [currentGreeting, setCurrentGreeting] = useState(greetingList[0]);
+  const [ISTTime, setISTTime] = useState('');
+  const [currentTime,  setCurrentTime] = useState<number>();
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -48,15 +49,29 @@ const Footer = () => {
     };
   });
 
-  var currentTime = new Date();
 
-  var currentOffset = currentTime.getTimezoneOffset();
 
-  var ISTOffset = 330; // IST offset UTC +5:30
+  useEffect(() => {
+    const calculateISTTime = () => {
+      const currentTime = new Date();
+      setCurrentTime(currentTime.getUTCFullYear());
+      const currentOffset = currentTime.getTimezoneOffset();
+      const ISTOffset = 330; // IST offset UTC +5:30
 
-  var ISTTime = new Date(
-    currentTime.getTime() + (ISTOffset + currentOffset) * 60000,
-  );
+      const ISTTime = new Date(
+        currentTime.getTime() + (ISTOffset + currentOffset) * 60000
+      );
+
+      return ISTTime.toLocaleTimeString();
+    };
+
+    const interval = setInterval(() => {
+      const timeString = calculateISTTime();
+      setISTTime(timeString);
+    }, 1000); // Update every second
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <footer className="relative h-[130vh] bg-secondary px-[4rem] py-[10rem] text-primary fold:h-[108vh] md:h-[80vh] md:px-[10rem] lg:h-[100vh] xl:h-[80vh]">
@@ -122,9 +137,9 @@ const Footer = () => {
                   <path
                     d="M1.13086 9.30922L9.74836 0.692383M9.74836 0.692383L2.02676 0.692384M9.74836 0.692383V8.41399"
                     stroke="#f0eff1"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   />
                 </svg>
               </button>
@@ -145,9 +160,9 @@ const Footer = () => {
                   <path
                     d="M1.13086 9.30922L9.74836 0.692383M9.74836 0.692383L2.02676 0.692384M9.74836 0.692383V8.41399"
                     stroke="#f0eff1"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   />
                 </svg>
               </button>
@@ -184,8 +199,8 @@ const Footer = () => {
                   <path
                     d="M0.923828 8.05917L7.96303 1.02051M7.96303 1.02051L1.65564 1.02051M7.96303 1.02051V7.3279"
                     stroke="#6D6D6D"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   />
                 </svg>
                 <svg
@@ -199,8 +214,8 @@ const Footer = () => {
                   <path
                     d="M0.923828 8.05917L7.96303 1.02051M7.96303 1.02051L1.65564 1.02051M7.96303 1.02051V7.3279"
                     stroke="#FFFCF1"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   />
                 </svg>
               </a>
@@ -214,7 +229,7 @@ const Footer = () => {
         <div className="h-[2px] w-full bg-primary" />
         <div className="flex items-center justify-between py-[5rem] md:text-4xl">
           <p className={`${syne.className}`}>
-            © {currentTime.getUTCFullYear()}
+            © {currentTime}
           </p>
           <div className="flex gap-6">
             <div className="relative hidden items-center sm:flex">
@@ -222,7 +237,7 @@ const Footer = () => {
               <div className="absolute aspect-square h-2 w-2 translate-x-[2.5px] translate-y-[-0.4px] rounded-full bg-green-500" />
             </div>
             <p className={`${syne.className} px-2 md:text-2xl`}>
-              Local Time - {ISTTime.toLocaleTimeString()} (IST)
+              Local Time - {ISTTime} (IST)
             </p>
           </div>
           <p className={`${trapBold.className}`}>Zenversee</p>
