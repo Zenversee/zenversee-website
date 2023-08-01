@@ -71,6 +71,15 @@ const Header = () => {
               );
             })}
           </ul>
+
+          <div className="">
+            <a
+              className="ml-5 whitespace-nowrap border-b-2 border-none border-dark pb-[12px] font-semibold text-dark md:border-solid"
+              href="https://knccspfxa0x.typeform.com/to/U4F628eG"
+            >
+              Let&apos;s work together
+            </a>
+          </div>
         </div>
       </motion.nav>
 
@@ -85,7 +94,7 @@ const Header = () => {
             </div>
           </Link>
           <div className="flex items-center gap-10">
-            <div className="hidden sm:flex xl:flex-1">
+            <div className="hidden sm:flex">
               <a
                 className="ml-5 whitespace-nowrap border-b-2 border-none border-dark pb-[12px] font-semibold text-dark md:border-solid"
                 href="https://knccspfxa0x.typeform.com/to/U4F628eG"
@@ -121,7 +130,7 @@ const Header = () => {
               animate="enter"
               exit="exit"
               className={
-                "fixed right-0 top-0 flex h-screen bg-secondary text-primary md:hidden"
+                "fixed right-0 top-0 flex h-screen bg-secondary text-primary xl:hidden"
               }
             >
               <div
