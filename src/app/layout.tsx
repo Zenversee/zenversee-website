@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import GlobalLog from "./globalLog";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -89,6 +90,7 @@ export default function RootLayout({
       <GlobalLog />
       <body className={`${inter.className} bg-primary leading-[1]`}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
