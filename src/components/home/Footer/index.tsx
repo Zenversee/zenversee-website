@@ -34,22 +34,20 @@ const socialsList = [
 
 const Footer = () => {
   const [currentGreeting, setCurrentGreeting] = useState(greetingList[0]);
-  const [ISTTime, setISTTime] = useState('');
-  const [currentTime,  setCurrentTime] = useState<number>();
+  const [ISTTime, setISTTime] = useState("");
+  const [currentTime, setCurrentTime] = useState<number>();
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      const currentIndex = greetingList.indexOf(currentGreeting);
-      const nextIndex = (currentIndex + 1) % greetingList.length;
-      setCurrentGreeting(greetingList[nextIndex]);
-    }, 1500);
+  // useEffect(() => {
+  //   const intervalId = setInterval(() => {
+  //     const currentIndex = greetingList.indexOf(currentGreeting);
+  //     const nextIndex = (currentIndex + 1) % greetingList.length;
+  //     setCurrentGreeting(greetingList[nextIndex]);
+  //   }, 1500);
 
-    return () => {
-      clearInterval(intervalId);
-    };
-  });
-
-
+  //   return () => {
+  //     clearInterval(intervalId);
+  //   };
+  // });
 
   useEffect(() => {
     const calculateISTTime = () => {
@@ -59,7 +57,7 @@ const Footer = () => {
       const ISTOffset = 330; // IST offset UTC +5:30
 
       const ISTTime = new Date(
-        currentTime.getTime() + (ISTOffset + currentOffset) * 60000
+        currentTime.getTime() + (ISTOffset + currentOffset) * 60000,
       );
 
       return ISTTime.toLocaleTimeString();
@@ -70,8 +68,17 @@ const Footer = () => {
       setISTTime(timeString);
     }, 1000); // Update every second
 
-    return () => clearInterval(interval);
-  }, []);
+    const intervalId = setInterval(() => {
+      const currentIndex = greetingList.indexOf(currentGreeting);
+      const nextIndex = (currentIndex + 1) % greetingList.length;
+      setCurrentGreeting(greetingList[nextIndex]);
+    }, 1500);
+
+    return () => {
+      clearInterval(intervalId);
+      clearInterval(interval)
+    };
+  }, [currentGreeting]);
 
   return (
     <footer className="relative h-[130vh] bg-secondary px-[4rem] py-[10rem] text-primary fold:h-[108vh] md:h-[80vh] md:px-[10rem] lg:h-[100vh] xl:h-[80vh]">
@@ -228,9 +235,7 @@ const Footer = () => {
       <div className="absolute bottom-0  w-[80vw] xl:w-[83vw] 2xl:w-[90vw]">
         <div className="h-[2px] w-full bg-primary" />
         <div className="flex items-center justify-between py-[5rem] md:text-4xl">
-          <p className={`${syne.className}`}>
-            © {currentTime}
-          </p>
+          <p className={`${syne.className}`}>© {currentTime}</p>
           <div className="flex gap-6">
             <div className="relative hidden items-center sm:flex">
               <div className="aspect-square w-4 animate-ping rounded-full bg-green-500/25" />

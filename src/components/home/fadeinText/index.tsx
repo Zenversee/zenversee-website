@@ -1,9 +1,7 @@
 "use client";
-// import styles from "./page.module.css";
 import { useRef, useEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
-import { syne } from "@zenversee/fonts";
 
 const phrase: String =
   "We, at Zenversee combine design, tech,and marketing to turn your bold ideas into brands. We specialize in providing web development and social media marketing services to startups, businesses, and influencers. With our expertise, we help to bring your project to the next level be it on VR,AR, metaverse or something else.";
@@ -28,7 +26,7 @@ export default function FadeinText() {
       },
       opacity: 1,
       ease: "none",
-      stagger: 0.1,
+      stagger: 0.15,
     });
   };
 
@@ -67,7 +65,7 @@ export default function FadeinText() {
     <div className="h-[200vh]">
       <section
         ref={container}
-        className={`flex sticky top-0 cursor-default items-end justify-center text-black md:mb-[30rem] md:h-[80vh]`}
+        className={`sticky top-0 flex cursor-default items-end justify-center text-black md:mb-[30rem] md:h-[80vh]`}
       >
         <div ref={body} className={`flex w-[90%] flex-wrap`}>
           {splitWords(phrase)}
