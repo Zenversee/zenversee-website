@@ -1,3 +1,12 @@
+<p align="center">
+  
+![zenversee thumb](https://github.com/Zenversee/zenversee-website/assets/74916308/6e64a18e-10ed-4875-a05d-b376d9f497d6)
+
+
+</p>
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
