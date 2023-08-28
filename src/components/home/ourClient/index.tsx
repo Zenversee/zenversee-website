@@ -15,7 +15,7 @@ const projects = [
   {
     title: "Edubeacon",
     src: "edubecon.png",
-    link: "https://edubeacon.io/",
+    link: "https://edubeacon-website-7sqb8et2g-edubeacon2-gmailcom.vercel.app/",
     color: "#ADD8E6"
   },
   {
